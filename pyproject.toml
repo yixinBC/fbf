@@ -1,0 +1,17 @@
+[project]
+name = "fbf"
+version = "0.1.0"
+description = "fxxk brainfuck"
+authors = [
+    {name = "yixinBC", email = "yixinbc@foxmail.com"},
+]
+dependencies = [
+    "rich>=13.6.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
