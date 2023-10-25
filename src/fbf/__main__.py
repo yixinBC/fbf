@@ -11,8 +11,10 @@ def main():
     run_parser.add_argument(
         "file",
         type=argparse.FileType("r"),
+        required=True,
         help="the brainfuck source code file to run",
     )
+    run_parser.add_argument("mode", default="u8", choices=["u8", "u16", "inf"])
 
     args = arg_parser.parse_args()
 
