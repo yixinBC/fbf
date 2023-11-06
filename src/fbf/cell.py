@@ -9,10 +9,10 @@ class u8(int):
     """
 
     def __add__(self, other: int) -> "u8":
-        return u8((self + other) % 256)
+        return u8((int(self) + other) % 256)
 
     def __sub__(self, other: int) -> "u8":
-        return u8((self - other) % 256)
+        return u8((int(self) - other) % 256)
 
 
 class u16(int):
@@ -21,10 +21,10 @@ class u16(int):
     """
 
     def __add__(self, other: int) -> "u16":
-        return u16((self + other) % 65536)
+        return u16((int(self) + other) % 65536)
 
     def __sub__(self, other: int) -> "u16":
-        return u16((self - other) % 65536)
+        return u16((int(self) - other) % 65536)
 
 
 class Cell:
