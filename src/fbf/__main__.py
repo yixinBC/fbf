@@ -1,7 +1,14 @@
+"""
+main module for fbf
+"""
 import argparse
+from .run import run_bf
 
 
 def main():
+    """
+    main func to parse command line arguments
+    """
     arg_parser = argparse.ArgumentParser()
     subparsers = arg_parser.add_subparsers(
         dest="command", required=True, help="the subcommand to run"
@@ -14,12 +21,17 @@ def main():
         required=True,
         help="the brainfuck source code file to run",
     )
-    run_parser.add_argument("mode", default="u8", choices=["u8", "u16", "inf"])
+    run_parser.add_argument(
+        "mode",
+        default="u8",
+        choices=["u8", "u16", "inf"],
+        help="set cell type,default is u8",
+    )
 
     args = arg_parser.parse_args()
 
     if args.command == "run":
-        pass
+        run_bf(args.file, args.mode)
 
 
 if __name__ == "__main__":
