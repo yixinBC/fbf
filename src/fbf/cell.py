@@ -1,7 +1,6 @@
 """
 this module contains all cell types used in this project
 """
-from typing import Any
 
 
 class u8(int):
@@ -33,10 +32,8 @@ class Cell:
     base Cell type, used for all other cell types
     """
 
-    def __init__(self, value=0) -> None:
-        self.value: Any = value
-        self.next: Cell | None = None
-        self.prev: Cell | None = None
+    def __init__(self):
+        raise NotImplementedError
 
 
 class InfCell(Cell):
@@ -46,8 +43,9 @@ class InfCell(Cell):
     """
 
     def __init__(self, value=0) -> None:
-        super().__init__()
         self.value: int = value
+        self.next: InfCell | None = None
+        self.prev: InfCell | None = None
 
 
 class u8Cell(Cell):
@@ -56,8 +54,9 @@ class u8Cell(Cell):
     """
 
     def __init__(self, value=0) -> None:
-        super().__init__()
         self.value: u8 = u8(value % 256)
+        self.next: u8Cell | None = None
+        self.prev: u8Cell | None = None
 
 
 class u16Cell(Cell):
@@ -66,5 +65,6 @@ class u16Cell(Cell):
     """
 
     def __init__(self, value=0) -> None:
-        super().__init__()
         self.value: u16 = u16(value % 65536)
+        self.next: u16Cell | None = None
+        self.prev: u16Cell | None = None
