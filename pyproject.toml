@@ -7,16 +7,25 @@ dependencies = ["rich>=13.6.0"]
 requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[project.urls]
+"Source Code" = "https://github.com/yixinBC/fbf"
+Issues = "https://github.com/yixinBC/fbf/issues"
 
 [project.scripts]
 fbf = "fbf.__main__:main"
 
 [build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
 
 [tool.pdm.dev-dependencies]
-dev = [
-    "maturin>=1.3.2",
-    "pip>=23.3.1",
-]
+dev = ["maturin>=1.3.2", "pip>=23.3.1"]
+
+[tool.maturin]
+module-name = "fbf.ybsm"

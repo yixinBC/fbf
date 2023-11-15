@@ -9,4 +9,4 @@ name = "ybsm"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.19.0"
+pyo3 = { version = "0.20.0", features = ["extension-module"] }
