@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-python.black-formatter",
+        "usernamehw.errorlens",
+        "ms-python.vscode-pylance",
+        "ms-python.pylint",
+        "ms-python.python",
+        "rust-lang.rust-analyzer",
+        "ms-python.isort"
+    ]
+}
